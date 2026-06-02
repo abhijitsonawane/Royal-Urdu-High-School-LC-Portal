@@ -1848,12 +1848,9 @@ body{
     <div class="fg"><label>Nationality</label><select id="f_nationality"><option>Indian</option><option>Other</option></select></div>
     <div class="fg"><label>Religion</label><select id="f_religion"><option>Hindu</option><option>Muslim</option><option>Christian</option><option>Buddhist</option><option>Jain</option><option>Sikh</option><option>Parsi</option><option>Other</option><option>Islam</option></select></div>
     <div class="fg"><label>Caste</label><input id="f_caste" placeholder="Caste"></div>
-<div class="fg">
-  <label>Sub Caste</label>
-  <input id="f_subcaste" placeholder="Enter Sub Caste">
-</div>
 
-    <div class="fg"><label>Category</label><select id="f_category"><option>SC</option><option>ST</option><option>OBC</option><option>VJNT</option><option>NT</option><option>General</option><option>SBC</option><option>-</option><option>Other Backword</option><option>Pinjari</option><option>Khatik</option></select></div>
+
+    <div class="fg"><label>Category</label><select id="f_category"><option>SC</option><option>ST</option><option>OBC</option><option>VJNT</option><option>NT</option><option>General</option><option>SBC</option><option>-</option><option>Other Backword</option><option>Other Backword</option></select></div>
   </div>
   <div style="margin-bottom:8px;font-size:11px;font-weight:700;color:#888;text-transform:uppercase">Academic Details</div>
   <div class="g3" style="margin-bottom:10px">
@@ -2022,7 +2019,6 @@ if(aadhaar && aadhaar.length!==12){
     nationality:getv('f_nationality'),
     religion:getv('f_religion'),
     caste:getv('f_caste'),
-    subcaste:getv('f_subcaste'),
     category:getv('f_category'),
     admstd:getv('f_admstd'),
 
@@ -2089,7 +2085,6 @@ function clearForm(){
 'f_dob',
 'f_birthplace',
 'f_caste',
-'f_subcaste',
 'f_gr',
 'f_pen',
 'f_aadhaar',
@@ -2107,7 +2102,7 @@ function clearForm(){
 }
 function editStudent(id){
   var s=students.find(function(x){return x.id===id;});if(!s)return;
-  setv('edit_id',s.id);setv('f_name',s.name);setv('f_mother',s.mother);setv('f_dob',s.dob);setv('f_birthplace',s.birthplace);setv('f_caste',s.caste);setv('f_caste',s.subcaste);setv('f_gr',s.gr);setv('f_pen',s.pen);setv('f_aadhaar',s.aadhaar);setv('f_admdate',s.admdate);setv('f_leavdate',s.leavdate);
+  setv('edit_id',s.id);setv('f_name',s.name);setv('f_mother',s.mother);setv('f_dob',s.dob);setv('f_birthplace',s.birthplace);setv('f_caste',s.caste);setv('f_gr',s.gr);setv('f_pen',s.pen);setv('f_aadhaar',s.aadhaar);setv('f_admdate',s.admdate);setv('f_leavdate',s.leavdate);
   setv('f_nationality',s.nationality);setv('f_admstd',s.admstd);setv('f_religion',s.religion);setv('f_category',s.category);setv('f_std',s.std);setv('f_div',s.div);setv('f_reason',s.reason); setv('f_lastschool',s.lastschool);
 
 setv('f_seatno',s.seatno);
@@ -2434,7 +2429,7 @@ esc(s.aadhaar || '—')
 '<tr>'+
   '<td class="lbl">Sub-Caste</td>'+
   '<td class="val" colspan="3">'+
-    '<strong>'+esc(s.subcaste || '—')+'</strong>'+
+    '<strong>'+esc(s.category || '—')+'</strong>'+
   '</td>'+
 '</tr>'+
 '<tr>'+
