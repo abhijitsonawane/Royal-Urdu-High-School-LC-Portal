@@ -1,0 +1,2559 @@
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f0f0f0;color:#222;font-size:14px}
+.app{max-width:860px;margin:0 auto;padding:16px}
+
+.topbar{
+  background:
+    linear-gradient(135deg,#0f172a,#1e3a8a);
+
+  color:#fff;
+
+  padding:24px 30px;
+
+  border-radius:22px;
+
+  margin-bottom:24px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  box-shadow:
+    0 10px 30px rgba(30,58,138,.18);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.school-mini{
+  font-size:11px;
+
+  letter-spacing:4px;
+
+  text-transform:uppercase;
+
+  opacity:.8;
+
+  margin-bottom:6px;
+
+  font-weight:700;
+}
+.section{
+  background:#fff;
+
+  border:none;
+
+  border-radius:24px;
+
+  padding:30px;
+
+  margin-bottom:24px;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.06);
+
+  border:1px solid #e5e7eb;
+}
+.fg input,
+.fg select{
+
+  height:54px;
+
+  padding:0 18px;
+
+  border:1.5px solid #d4d7e3;
+
+  border-radius:14px;
+
+  font-size:15px;
+
+  background:#f9fafc;
+
+  transition:.25s;
+
+  font-weight:600;
+}
+.fg input:focus,
+.fg select:focus{
+
+  border-color:#1e40af;
+
+  background:#fff;
+
+  box-shadow:
+    0 0 0 4px rgba(30,64,175,.08);
+}
+.fg label{
+  font-size:11px;
+
+  font-weight:800;
+
+  color:#374151;
+
+  margin-bottom:6px;
+
+  letter-spacing:1px;
+}
+.sec-title{
+
+  font-size:18px;
+
+  font-weight:900;
+
+  color:#111827;
+
+  margin-bottom:24px;
+
+  padding-bottom:14px;
+
+  border-bottom:2px solid #e5e7eb;
+
+  letter-spacing:1px;
+}
+.btn{
+  height:48px;
+
+  padding:0 22px;
+
+  border-radius:14px;
+
+  font-size:14px;
+
+  font-weight:800;
+
+  border:none;
+
+  transition:.25s;
+}
+body{
+  background:
+    linear-gradient(to bottom,#eef2ff,#f8fafc);
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  color:#111827;
+}
+
+.section{background:#fff;border:1px solid #ccc;border-radius:8px;padding:20px;margin-bottom:14px}
+.sec-title{font-size:14px;font-weight:700;border-bottom:2px solid #1a1a6e;padding-bottom:6px;margin-bottom:14px;color:#1a1a6e;text-transform:uppercase;letter-spacing:1px}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.fg{display:flex;flex-direction:column;gap:3px}
+.fg label{font-size:11px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.5px}
+.fg input,.fg select{padding:7px 10px;border:1.5px solid #bbb;border-radius:5px;font-size:13px;color:#111;background:#fff;outline:none;width:100%}
+.fg input:focus,.fg select:focus{border-color:#1a1a6e}
+
+.btn{padding:8px 16px;border:none;border-radius:5px;font-size:13px;font-weight:700;cursor:pointer}
+.btn-navy{background:#1a1a6e;color:#fff}
+.btn-navy:hover{background:#111155}
+.btn-green{background:#1a6e1a;color:#fff}
+.btn-green:hover{background:#145014}
+.btn-red{background:#8b0000;color:#fff}
+.btn-red:hover{background:#5a0000}
+.btn-gray{background:#666;color:#fff}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:#1a1a6e;color:#fff;padding:8px 10px;font-size:11px;text-align:left;text-transform:uppercase}
+.tbl td{padding:7px 10px;border-bottom:1px solid #eee;vertical-align:middle}
+.tbl tr:hover td{background:#f5f5ff}
+.badge{padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700}
+.b-ok{background:#e8f5e9;color:#1a6e1a}
+.b-pending{background:#fff3e0;color:#b34700}
+.msg{padding:9px 14px;border-radius:5px;margin-bottom:10px;font-size:13px;font-weight:700}
+.msg-ok{background:#e8f5e9;color:#1a6e1a}
+.msg-err{background:#ffebee;color:#8b0000}
+.empty{text-align:center;color:#aaa;padding:20px;font-size:13px}
+
+/* ======= A4 LC PRINT ======= */
+
+ 
+/* =========================
+   PREMIUM A4 LC PRINT
+========================= */
+
+#lc-area{
+  display:none;
+}
+
+@page{
+  size:A4 portrait;
+  margin:0;
+}
+
+@media print{
+
+  html,body{
+    margin:0;
+    padding:0;
+    background:#fff;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  body *{
+    visibility:hidden;
+  }
+
+  #lc-area,
+  #lc-area *{
+    visibility:visible;
+  }
+
+  #lc-area{
+    position:fixed;
+    top:0;
+    left:0;
+    width:210mm;
+    height:297mm;
+    display:block !important;
+    overflow:hidden;
+    background:#fff;
+  }
+
+  .lc-page{
+    width:210mm;
+    height:297mm;
+    margin:0;
+    padding:8mm;
+    background:#fff;
+  }
+}
+
+/* PAGE */
+
+.lc-page{
+  width:210mm;
+  min-height:297mm;
+  background:#fff;
+  font-family:"Times New Roman",serif;
+  color:#000;
+  margin:auto;
+  padding:8mm;
+}
+
+/* OUTER BORDER */
+
+.lc-outer{
+  border:4px solid #000;
+  min-height:281mm;
+  padding:5mm;
+  position:relative;
+  background:#fff;
+}
+
+.lc-outer:after{
+  content:'';
+  position:absolute;
+  inset:5px;
+  border:1.5px solid #000;
+  pointer-events:none;
+}
+
+/* HEADER */
+
+.lc-hdr{
+  text-align:center;
+  border-bottom:3px double #000;
+  padding-bottom:8px;
+  margin-bottom:10px;
+}
+
+
+/* ===== ULTRA PERFECT HEADER ===== */
+
+.lc-hdr{
+  width:100%;
+  padding-bottom:8px;
+  margin-bottom:8px;
+}
+
+/* MAIN FLEX */
+
+.lc-header-main{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  width:100%;
+}
+
+/* LOGO */
+
+.lc-logo-box{
+  width:90px;
+  min-width:50px;
+  height:90px;
+
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  margin: 0 0 0 10px;
+
+  padding-top:6px;
+}
+
+
+
+/* CENTER CONTENT */
+
+.lc-header-center{
+  flex:1;
+  text-align:center;
+}
+
+/* SANSTHA */
+
+.lc-sanstha{
+  font-size:7pt;
+  font-weight:800;
+  letter-spacing:3px;
+  margin-bottom:4px;
+  color:#333;
+}
+
+/* SCHOOL NAME */
+
+.lc-school{
+  font: size 20px;
+  line-height:1.05;
+  font-weight:900;
+  letter-spacing:1px;
+  margin-bottom:4px;
+  text-transform:uppercase;
+}
+
+/* ADDRESS */
+
+.lc-addr{
+  font-size:9pt;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+/* RECOGNITION ROW */
+
+.lc-topline{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  font-size:8.5pt;
+  font-weight:700;
+
+  margin-top:4px;
+  margin-bottom:5px;
+
+  width:100%;
+}
+
+/* INFO GRID */
+
+
+
+/* =========================
+   ULTRA PREMIUM HEADER
+========================= */
+
+.lc-hdr{
+  text-align:center;
+  padding-bottom:10px;
+  margin-bottom:10px;
+  position:relative;
+}
+
+/* SANSTHA */
+
+.lc-sanstha{
+  font-family:'Inter',sans-serif;
+
+  font-size:7.8pt;
+
+  font-weight:700;
+
+  letter-spacing:5px;
+
+  text-transform:uppercase;
+
+  color:#666;
+
+  margin-bottom:6px;
+}
+
+/* SCHOOL NAME */
+
+.lc-school{
+  font-family:'Cinzel',serif;
+
+  font-size:22pt;
+
+  line-height:1.25;
+
+  font-weight:800;
+
+  letter-spacing:1.5px;
+
+  text-transform:uppercase;
+
+  color:#111;
+
+  margin-bottom:8px;
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.7),
+    0 2px 4px rgba(0,0,0,.06);
+}
+
+/* ADDRESS */
+
+.lc-addr{
+  font-family:'Inter',sans-serif;
+
+  font-size:8.8pt;
+
+  font-weight:600;
+
+  color:#555;
+
+  line-height:1.6;
+}
+
+/* UDISE */
+
+.lc-udise{
+  margin-top:4px;
+
+  font-size:8pt;
+
+  font-weight:800;
+
+  letter-spacing:1px;
+
+  color:#333;
+}
+
+/* PREMIUM GOLD LINE */
+
+.lc-hdr:after{
+  content:'';
+
+  display:block;
+
+  width:100%;
+
+  height:2px;
+
+  margin-top:10px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #b89146,
+      #e7cf8f,
+      #b89146,
+      transparent
+    );
+}
+
+/* TITLE */
+
+.lc-title{
+  text-align:center;
+  border:2px solid #000;
+  background:#f1f1f1;
+  padding:8px 0;
+  margin:10px 0;
+  font-size:18pt;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.lc-marathi{
+  display:block;
+  font-size:10pt;
+  margin-top:2px;
+  letter-spacing:1px;
+}
+
+/* LC NUMBER ROW */
+
+.lc-meta-row{
+  display:flex;
+  justify-content:space-between;
+  margin:10px 0;
+  font-size:11pt;
+  font-weight:900;
+}
+
+/* TABLE */
+
+.lc-tbl{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  margin-top:4px;
+}
+
+.lc-tbl td{
+  border:1px solid #222;
+  padding:8px 8px;
+  vertical-align:middle;
+  font-size:10pt;
+  line-height:1.5;
+  word-wrap:break-word;
+}
+
+.lc-tbl .lbl{
+  background:#f3f3f3;
+  font-weight:900;
+  width:26%;
+}
+
+.lc-tbl .val{
+  width:24%;
+  font-weight:700;
+}
+
+.lc-tbl small{
+  display:block;
+  font-size:8pt;
+  margin-top:2px;
+  color:#333;
+}
+
+/* CERTIFICATE TEXT */
+
+.lc-cert{
+  border:1.5px solid #000;
+  padding:8px 10px;
+  margin-top:10px;
+  line-height:1.8;
+  font-size:10pt;
+  background:#fafafa;
+  font-weight:700;
+}
+
+/* FOOTER */
+
+.lc-footer{
+  margin-top:16px;
+  padding-top:10px;
+  border-top:2px solid #000;
+}
+
+/* SIGNATURES */
+
+.lc-sigs{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:20px;
+  align-items:end;
+}
+
+.lc-sig-box{
+  text-align:center;
+}
+
+.lc-sig-space{
+  height:70px;
+  border:1px dashed #999;
+  border-radius:8px;
+  margin-bottom:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#999;
+  font-size:8pt;
+  font-weight:700;
+  text-transform:uppercase;
+}
+
+.lc-stamp-circle{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  border:2px dashed #999;
+  margin:0 auto 8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:7pt;
+  color:#999;
+  line-height:1.4;
+  font-weight:700;
+}
+
+.lc-sig-line{
+  border-top:1.5px solid #000;
+  margin-bottom:5px;
+}
+
+.lc-sig-lbl{
+  font-size:9pt;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+/* FOOT NOTE */
+
+.lc-footnote{
+  margin-top:10px;
+  padding-top:6px;
+  border-top:1px solid #bbb;
+  text-align:center;
+  font-size:8pt;
+  font-weight:700;
+  color:#444;
+}
+.lc-outer{
+  position:relative;
+  border:4px solid #111;
+  padding:6mm;
+  background:#fffdf7;
+
+  box-shadow:
+    inset 0 0 0 2px #c8a44d,
+    inset 0 0 0 6px #111;
+}
+.lc-hdr{
+  position:relative;
+}
+
+.lc-hdr:after{
+  content:'';
+  display:block;
+  width:100%;
+  height:3px;
+  margin-top:8px;
+
+  background:linear-gradient(
+    to right,
+    transparent,
+    #c8a44d,
+    transparent
+  );
+}
+.lc-school{
+  font-family:'Cinzel',serif;
+  font-size:26pt;
+  font-weight:800;
+  letter-spacing:1px;
+}
+.lc-tbl tr:nth-child(even) td{
+  background:#fcfcfc;
+}
+.lc-tbl .lbl{
+  background:#f2f2f2;
+  font-weight:900;
+  color:#111;
+}
+
+
+
+
+/* HEADER */
+.lc-hdr{
+  text-align:center;
+  border-bottom:3px double #000;
+  padding-bottom:8px;
+  margin-bottom:8px;
+}
+.lc-sanstha{
+  font-size:10pt;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#333;
+  font-weight:700;
+}
+.lc-school{
+  font-size:28pt;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  line-height:1.2;
+  margin:4px 0;
+  color:#000;
+}
+.lc-title{
+  text-align:center;
+  font-size:18pt;
+  font-weight:900;
+  letter-spacing:4px;
+  border:3px double #000;
+  padding:7px 0;
+  margin:10px 0;
+  background:#f3f4f6;
+}
+.lc-tbl td{
+  border:1px solid #444;
+  padding:7px 10px;
+  vertical-align:middle;
+  line-height:1.6;
+}
+.lc-footer{
+  margin-top:16px;
+  border-top:2px solid #000;
+  padding-top:12px;
+}
+.lc-sig-space{
+  height:70px;
+  border:1px dashed #777;
+  margin-bottom:8px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:8pt;
+  color:#aaa;
+  font-weight:700;
+}
+@page{
+  size:A4;
+  margin:0;
+}
+.lc-addr{
+  font-size:9.5pt;
+  color:#222;
+  line-height:1.8;
+  font-weight:700;
+}
+.lc-udise{
+  font-size:9pt;
+  font-weight:700;
+  color:#000;
+  margin-top:2px;
+}
+
+/* DOC TITLE */
+.lc-title{
+  text-align:center;
+  font-size:15pt;
+  font-weight:900;
+  letter-spacing:3px;
+  border:2.5px solid #000;
+  padding:5px 0;
+  margin:8px 0;
+  background:#f0f0e8;
+  text-transform:uppercase;
+  color:#000;
+}
+.lc-marathi{
+  font-size:10pt;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#333;
+  display:block;
+}
+
+/* LC NUMBER ROW */
+.lc-meta-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:10.5pt;
+  font-weight:900;
+  margin-bottom:6px;
+  color:#000;
+}
+
+/* TABLE */
+.lc-tbl{
+  width:100%;
+  border-collapse:collapse;
+  font-size:10.5pt;
+  margin-bottom:6px;
+}
+.lc-tbl td{
+  border:1.5px solid #555;
+  padding:5px 8px;
+  vertical-align:middle;
+  line-height:1.5;
+}
+.lc-tbl .lbl{
+  background:#ebebeb;
+  font-weight:900;
+  width:37%;
+  color:#000;
+}
+.lc-tbl .val{
+  font-weight:700;
+  color:#000;
+  width:63%;
+}
+
+/* FULL ROW (spans 2 cols) */
+.lc-tbl .full-lbl{
+  background:#ebebeb;
+  font-weight:900;
+  width:37%;
+  color:#000;
+}
+.lc-tbl .full-val{
+  font-weight:700;
+  color:#000;
+}
+
+/* CERT TEXT */
+.lc-cert{
+  font-size:9.5pt;
+  font-weight:700;
+  border:1.5px solid #888;
+  padding:6px 8px;
+  background:#f8f8f0;
+  line-height:1.7;
+  margin:6px 0;
+  color:#000;
+}
+
+/* FOOTER / SIGNATURES */
+.lc-footer{
+  margin-top:auto;
+  border-top:2.5px solid #000;
+  padding-top:8px;
+}
+.lc-sigs{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:12px;
+  margin-top:6px;
+}
+.lc-sig-box{text-align:center}
+.lc-sig-space{
+  height:65px;
+  border:1.5px dashed #999;
+  margin-bottom:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:8pt;
+  color:#bbb;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-weight:700;
+}
+.lc-stamp-circle{
+  border-radius:50%;
+  width:72px;
+  height:72px;
+  border:1.5px dashed #999;
+  margin:0 auto 6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:7pt;
+  color:#bbb;
+  text-transform:uppercase;
+  text-align:center;
+  line-height:1.3;
+  font-weight:700;
+}
+.lc-sig-line{border-top:1.5px solid #000;margin-bottom:4px}
+.lc-sig-lbl{font-size:8.5pt;font-weight:900;text-transform:uppercase;letter-spacing:.5px;color:#000}
+.lc-footnote{font-size:8pt;color:#555;text-align:center;margin-top:6px;border-top:1px solid #bbb;padding-top:5px;font-weight:700}
+
+/* PREVIEW BOX */
+.lc-preview-wrap{
+  background:#888;
+  padding:16px;
+  border-radius:6px;
+  margin-top:0;
+  overflow-x:auto;
+}
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 24px;
+  border-radius:18px;
+  margin-bottom:18px;
+
+  background:linear-gradient(135deg,#0f172a,#1e3a8a,#312e81);
+  color:#fff;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.08);
+
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.topbar h1{
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+body{
+  font-family:'Inter',Arial,sans-serif;
+  background:
+    radial-gradient(circle at top left,#dbeafe,#f8fafc 40%),
+    linear-gradient(to bottom,#eef2ff,#f5f7fb);
+  color:#111827;
+  font-size:14px;
+}
+.section{
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  padding:24px;
+  margin-bottom:18px;
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+    0 10px 30px rgba(15,23,42,.08),
+    0 2px 8px rgba(15,23,42,.04);
+}
+.fg input,.fg select{
+  padding:11px 14px;
+  border:1.5px solid #d1d5db;
+  border-radius:12px;
+  font-size:13px;
+  color:#111827;
+  background:#fff;
+  outline:none;
+  width:100%;
+  transition:.25s;
+}
+
+.fg input:focus,.fg select:focus{
+  border-color:#2563eb;
+  box-shadow:0 0 0 4px rgba(37,99,235,.12);
+}
+.btn{
+  padding:10px 18px;
+  border:none;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-navy{
+  background:linear-gradient(135deg,#1d4ed8,#312e81);
+  color:#fff;
+}
+
+.btn-green{
+  background:linear-gradient(135deg,#15803d,#166534);
+  color:#fff;
+}
+
+.btn-red{
+  background:linear-gradient(135deg,#dc2626,#991b1b);
+  color:#fff;
+}
+.student-name{
+  font-size:12pt;
+  font-weight:900;
+  color:#000;
+  letter-spacing:.3px;
+}
+.lc-meta-row span{
+  border:1px solid #222;
+  padding:4px 12px;
+  border-radius:4px;
+  background:#fafafa;
+}
+.lc-sig-space{
+  background:
+    linear-gradient(to bottom,#fff,#fafafa);
+}
+.lc-footnote{
+  letter-spacing:.5px;
+  color:#444;
+}
+.lc-stamp-circle{
+  border:2px dashed #1d4ed8;
+  color:#1d4ed8;
+}
+.school-mini{
+  font-size:16px;
+
+  letter-spacing:4px;
+
+  text-transform:uppercase;
+
+  opacity:.8;
+
+  margin-bottom:6px;
+
+  font-weight:700;
+}
+.app{
+  max-width:1400px;
+
+  margin:0 auto;
+
+  padding:30px;
+}
+/* ===== COMPACT A4 FIT ===== */
+
+.lc-page{
+  width:210mm;
+  height:297mm;
+  padding:5mm;
+  overflow:hidden;
+}
+
+.lc-outer{
+  min-height:286mm;
+  padding:4mm;
+}
+
+/* HEADER COMPACT */
+
+.lc-hdr{
+  padding-bottom:5px;
+  margin-bottom:6px;
+}
+
+.lc-sanstha{
+  font-size:7pt;
+  margin-bottom:3px;
+}
+
+.lc-school{
+  font-size:20pt;
+  line-height:1.1;
+  margin-bottom:3px;
+}
+
+.lc-addr{
+  font-size:7.8pt;
+  line-height:1.3;
+}
+
+.lc-udise{
+  font-size:7.5pt;
+}
+
+/* TITLE SMALL */
+
+.lc-title{
+  font-size:14pt;
+  padding:4px 0;
+  margin:6px 0;
+}
+
+.lc-marathi{
+  font-size:8pt;
+}
+
+/* META ROW */
+
+.lc-meta-row{
+  margin:5px 0;
+  font-size:8.8pt;
+}
+
+/* TABLE COMPACT */
+
+.lc-tbl{
+  font-size:8.8pt;
+}
+
+.lc-tbl td{
+  padding:4px 6px;
+  line-height:1.25;
+}
+
+.lc-tbl .lbl{
+  width:34%;
+  font-size:8.3pt;
+}
+
+.lc-tbl .val{
+  width:16%;
+  font-size:8.6pt;
+}
+
+/* CERTIFICATE TEXT */
+
+.lc-cert{
+  margin-top:5px;
+  padding:5px 7px;
+  line-height:1.45;
+  font-size:8.5pt;
+}
+
+/* FOOTER */
+
+.lc-footer{
+  margin-top:6px;
+  padding-top:5px;
+}
+
+/* SIGNATURE */
+
+.lc-sig-space{
+  height:42px;
+  margin-bottom:4px;
+  font-size:7pt;
+}
+
+.lc-stamp-circle{
+  width:52px;
+  height:52px;
+  font-size:6pt;
+  margin-bottom:4px;
+}
+
+.lc-sig-lbl{
+  font-size:7pt;
+}
+
+.lc-footnote{
+  margin-top:4px;
+  padding-top:3px;
+  font-size:6.8pt;
+}
+.lc-topline{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:8pt;
+  font-weight:700;
+  margin-bottom:8px;
+  color:#111;
+}
+
+.lc-header-main{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+}
+
+
+
+.lc-logo{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.lc-header-center{
+  flex:1;
+  text-align:center;
+}
+
+.lc-info-grid{
+  margin-top:6px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 20px;
+  font-size:8.5pt;
+  font-weight:700;
+  color:#222;
+}
+.lc-info-row{
+  width:100%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+
+  gap:6px 18px;
+
+  margin-top:4px;
+
+  font-size:8.5pt;
+  font-weight:700;
+}
+
+.lc-info-item{
+  flex:1;
+  min-width:220px;
+  text-align:center;
+}
+
+.lc-udise-right{
+  text-align:right;
+  font-weight:900;
+  letter-spacing:.4px;
+}
+
+.udise-label{
+  font-size:9pt;
+  font-weight:800;
+  color:#111;
+}
+
+.udise-value{
+  font-size:11pt;
+  font-weight:900;
+  color:#000;
+
+  letter-spacing:1px;
+
+  padding:1px 6px;
+
+ 
+
+  display:inline-block;
+}
+
+.lc-logo-top{
+  width:100%;
+  text-align:center;
+
+  height:120px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:2px;
+}
+.lc-big-logo{
+  width:150px !important;
+  height:150px !important;
+
+  object-fit:contain;
+
+  display:block;
+
+  margin:auto;
+}
+.lc-header-main{
+  display:flex;
+  align-items:flex-start;   /* 👈 हा main fix आहे */
+  justify-content:center;
+  gap:16px;
+}
+.lc-logo-box{
+  width:90px;
+  height:90px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top:0;   /* remove extra push */
+}
+
+.lc-big-logo{
+  width:110px;
+  height:110px;
+  object-fit:contain;
+  display:block;
+}
+.lc-header-main{
+  align-items:flex-start;
+  margin-top:2mm;
+}
+.lc-logo-box{
+  width:90px;
+  height:90px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top:0;
+  
+}
+
+.lc-big-logo{
+  width:115px;
+  height:115px;
+  object-fit:contain;
+  display:block;
+}
+.lc-header-main{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  gap:18px;
+  padding-top:4px;
+}
+.lc-sanstha{
+  font-family: 'Inter', sans-serif;
+  font-size:8pt;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#444;
+  margin-bottom:4px;
+}
+.lc-school{
+  font-family: 'Cinzel', serif;
+  font-size:24pt;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:#111;
+  line-height:1.2;
+  margin-bottom:4px;
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.8),
+    0 2px 6px rgba(0,0,0,.08);
+}
+.lc-addr{
+  font-family:'Inter',sans-serif;
+  font-size:9pt;
+  font-weight:600;
+  color:#555;
+  margin-bottom:6px;
+  letter-spacing:.3px;
+}
+.lc-topline{
+  font-size:8.5pt;
+  font-weight:700;
+  color:#222;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:4px 0;
+}
+.lc-info-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:8.5pt;
+  font-weight:700;
+  color:#111;
+  margin-top:4px;
+}
+
+.lc-info-item{
+  padding:2px 8px;
+  border:1px solid #ddd;
+  border-radius:4px;
+  background:#fafafa;
+}
+.udise-label{
+  font-size:8pt;
+  font-weight:800;
+  color:#333;
+}
+
+.udise-value{
+  font-size:10pt;
+  font-weight:900;
+  color:#000;
+  letter-spacing:1px;
+  padding:1px 6px;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:3px;
+}
+/* =========================
+   PREMIUM LC (ENGLISH ONLY)
+   CLEAN GOVERNMENT STYLE
+========================= */
+
+body{
+  font-family:'Inter', Arial, sans-serif;
+  background:#eef2ff;
+  color:#111;
+}
+
+/* ===== A4 PAGE ===== */
+.lc-page{
+  width:210mm;
+  height:297mm;
+  padding:6mm;
+  background:#fff;
+  overflow:hidden;
+}
+
+.lc-outer{
+  border:4px solid #111;
+  padding:6mm;
+  min-height:285mm;
+  background:#fffdf8;
+  position:relative;
+  box-shadow:
+    inset 0 0 0 2px #c8a44d,
+    inset 0 0 0 6px #111;
+}
+
+/* ===== HEADER ===== */
+.lc-hdr{
+  text-align:center;
+  border-bottom:2px solid #111;
+  padding-bottom:6px;
+  margin-bottom:8px;
+}
+
+.lc-header-main{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  gap:18px;
+}
+
+/* LOGO */
+.lc-logo-box{
+  width:110px;
+  height:110px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+.lc-big-logo{
+  width:120px;
+  height:120px;
+  object-fit:contain;
+  margin-top:-10px;
+}
+
+/* CENTER HEADER */
+.lc-header-center{
+  flex:1;
+  text-align:center;
+}
+
+.lc-sanstha{
+  font-size:7pt;
+  font-weight:700;
+  letter-spacing:3px;
+  color:#444;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+
+.lc-school{
+  font-family:'Cinzel', serif;
+  font-size:24pt;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:#000;
+  margin-bottom:4px;
+}
+
+.lc-addr{
+  font-size:9pt;
+  font-weight:600;
+  color:#444;
+  margin-bottom:6px;
+}
+
+.lc-topline{
+  font-size:8pt;
+  font-weight:700;
+  color:#222;
+}
+
+/* INFO ROW */
+.lc-info-row{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  margin-top:5px;
+  font-size:8.5pt;
+  font-weight:700;
+}
+
+.lc-info-item{
+  border:1px solid #ddd;
+  padding:3px 8px;
+  background:#fafafa;
+  border-radius:3px;
+}
+
+/* ORIGINAL TAG */
+.lc-original{
+  padding:3px 10px;
+  border:2px solid #000;
+  font-size:8pt;
+  font-weight:900;
+  text-transform:uppercase;
+  background:#fff;
+  display:inline-block;
+  border-radius:4px;
+}
+
+/* ===== TITLE ===== */
+.lc-title{
+  text-align:center;
+  font-size:15pt;
+  font-weight:900;
+  letter-spacing:3px;
+  border:2px solid #000;
+  padding:5px 0;
+  margin:8px 0;
+  background:#f3f4f6;
+}
+
+/* ===== TABLE ===== */
+.lc-tbl{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:8px;
+}
+
+.lc-tbl td{
+  border:1px solid #222;
+  padding:7px 10px;
+  font-size:9.5pt;
+  vertical-align:middle;
+}
+
+/* LABEL */
+.lc-tbl .lbl{
+  width:28%;
+  font-weight:900;
+  text-transform:uppercase;
+  background:linear-gradient(#f3f4f6,#e5e7eb);
+  color:#111;
+  letter-spacing:.5px;
+}
+
+/* VALUE */
+.lc-tbl .val{
+  font-weight:700;
+  color:#000;
+}
+
+/* STRONG TEXT */
+.lc-tbl strong{
+  font-weight:900;
+  color:#000;
+}
+
+/* ALTERNATE ROW */
+.lc-tbl tr:nth-child(even) td{
+  background:#fcfcfc;
+}
+
+/* ===== CERTIFICATE TEXT ===== */
+.lc-cert{
+  margin-top:8px;
+  padding:6px 8px;
+  border:1.5px solid #888;
+  font-size:9pt;
+  font-weight:700;
+  background:#fafaf5;
+  line-height:1.6;
+}
+
+/* ===== FOOTER ===== */
+.lc-footer{
+  margin-top:10px;
+  border-top:2px solid #000;
+  padding-top:8px;
+}
+
+/* SIGNATURE */
+.lc-sigs{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:12px;
+}
+
+.lc-sig-space{
+  height:50px;
+  border:1.5px dashed #999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:7pt;
+  color:#999;
+  font-weight:700;
+}
+
+.lc-stamp-circle{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  border:1.5px dashed #1d4ed8;
+  margin:0 auto 5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:6.5pt;
+  color:#1d4ed8;
+  font-weight:700;
+  text-align:center;
+}
+
+/* FOOTNOTE */
+.lc-footnote{
+  margin-top:6px;
+  font-size:7.5pt;
+  text-align:center;
+  color:#444;
+  font-weight:600;
+}
+
+/* ===== PRINT ===== */
+@page{
+  size:A4;
+  margin:0;
+}
+
+@media print{
+  body *{
+    visibility:hidden;
+  }
+
+  #lc-area, #lc-area *{
+    visibility:visible;
+  }
+
+  #lc-area{
+    position:fixed;
+    top:0;
+    left:0;
+    width:210mm;
+    height:297mm;
+  }
+}
+/* =========================
+   FULL WIDTH ROW FIX (IMPORTANT)
+========================= */
+
+.lc-tbl{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed; /* 🔥 important fix */
+}
+
+/* force all td behave properly */
+.lc-tbl td{
+  border:1px solid #222;
+  padding:7px 10px;
+  font-size:9.5pt;
+  vertical-align:middle;
+  word-wrap:break-word;
+}
+
+/* label column fixed */
+.lc-tbl .lbl{
+  width:30%;
+  font-weight:900;
+  text-transform:uppercase;
+  background:linear-gradient(#f3f4f6,#e5e7eb);
+  color:#111;
+}
+
+/* value column FULL CONTROL */
+.lc-tbl .val{
+  width:70%;
+  font-weight:700;
+  color:#000;
+}
+
+/* 🔥 FULL WIDTH ROW FIX (IMPORTANT PART) */
+.lc-tbl td[colspan]{
+  width:100% !important;
+  display:block;
+  border-left:1px solid #222;
+  border-right:1px solid #222;
+}
+
+/* make full-row visually premium */
+.lc-tbl tr td[colspan] strong{
+  display:block;
+  font-size:11pt;
+  letter-spacing:.5px;
+  padding:2px 0;
+}
+
+/* row spacing premium feel */
+.lc-tbl tr{
+  page-break-inside:avoid;
+}
+.lc-tbl td[colspan="3"]{
+  width:100% !important;
+}
+
+.lc-tbl .val[colspan="3"]{
+  font-size:10pt;
+  font-weight:700;
+}
+
+.lc-tbl .lbl{
+  width:28%;
+}
+
+.lc-tbl .val{
+  width:auto;
+}
+/* FULL WIDTH NAME ROW */
+
+.lc-tbl{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+}
+
+.lc-tbl tr{
+  width:100%;
+}
+
+.lc-tbl .lbl{
+  width:28%;
+  font-weight:900;
+}
+
+.lc-tbl .val{
+  width:auto;
+}
+
+/* MAIN FIX */
+
+.lc-tbl td[colspan="3"]{
+  width:72% !important;
+  display:table-cell !important;
+}
+
+/* NAME ROW */
+
+.lc-tbl td[colspan="3"] strong{
+  display:block;
+  width:100%;
+  font-size:11pt;
+  letter-spacing:.5px;
+}
+
+/* PREMIUM LOOK */
+
+.lc-tbl tr:nth-child(odd) td{
+  background:#fff;
+}
+
+.lc-tbl tr:nth-child(even) td{
+  background:#fcfcfc;
+}
+.pen-box-wrap{
+  display:flex;
+  
+  flex-wrap:wrap;
+}
+
+.row-no{
+  text-align:center;
+  font-weight:700;
+  color:#1e3a8a;
+}
+
+.action-box{
+  display:flex;
+  gap:6px;
+  justify-content:center;
+}
+
+.action-btn{
+  width:34px;
+  height:34px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:.25s;
+  font-size:14px;
+}
+
+.action-btn:hover{
+  transform:translateY(-2px);
+}
+
+.edit-btn{
+  background:#dbeafe;
+}
+
+.print-btn{
+  background:#dcfce7;
+}
+
+.delete-btn{
+  background:#fee2e2;
+}
+
+.tbl tbody tr:hover{
+  background:#f8fafc;
+}
+
+.tbl thead{
+  background:linear-gradient(
+    135deg,
+    #0f172a,
+    #1e3a8a
+  );
+  color:white;
+}
+
+
+
+
+
+</style>
+
+<div class="app">
+<div class="topbar">
+  
+<div class="school-mini">
+  Royal Urdu Highschool Amalner (LC Portal)
+</div>
+  <div class="topbar-right">
+    <button class="btn btn-gray" onclick="toggleSettings()">&#9881; Settings</button>
+    <button class="btn btn-gray" onclick="doBackup()">&#11015; Backup</button>
+    <label class="btn btn-gray" style="cursor:pointer">&#11014; Restore<input type="file" accept=".json" style="display:none" onchange="doRestore(event)"></label>
+  </div>
+</div>
+
+<div id="msgbox"></div>
+
+<!-- SETTINGS -->
+<div id="sec-settings" style="display:none" class="section">
+  <div class="sec-title">School Settings</div>
+  <div class="g2" style="margin-bottom:10px">
+    <div class="fg"><label>Sanstha / Trust Name</label><input id="s_sanstha" placeholder="Sanstha Name"></div>
+    <div class="fg"><label>School Full Name</label><input id="s_school" placeholder="School Name"></div>
+  </div>
+  <div class="fg" style="margin-bottom:10px"><label>Full Address</label><input id="s_addr" placeholder="Address, City, Pin Code"></div>
+  <div class="g3" style="margin-bottom:10px">
+    <div class="fg"><label>Email</label><input id="s_email" placeholder="email@school.com"></div>
+    <div class="fg"><label>Phone</label><input id="s_phone" placeholder="+91-XXXXXXXXXX"></div>
+    <div class="fg"><label>UDISE Number</label><input id="s_udise" placeholder="UDISE Code"></div>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-navy" onclick="saveSchool()">&#10003; Save Settings</button>
+    <button class="btn btn-gray" onclick="toggleSettings()">&#10007; Close</button>
+  </div>
+</div>
+
+<!-- ADD/EDIT STUDENT -->
+<div class="section">
+  <div class="sec-title">&#10133; <span id="form-title">Add Student</span></div>
+  <div style="margin-bottom:8px;font-size:11px;font-weight:700;color:#888;text-transform:uppercase">Personal Details</div>
+  <div class="g3" style="margin-bottom:10px">
+    <div class="fg"><label>Full Name *</label><input id="f_name" placeholder="Student Full Name"></div>
+    <div class="fg"><label>Mother Name</label><input id="f_mother" placeholder="Mother's Name"></div>
+    <div class="fg"><label>Date of Birth</label><input id="f_dob" type="date"></div>
+    <div class="fg"><label>Birth Place</label><input id="f_birthplace" placeholder="City / Village"></div>
+  </div>
+  <div style="margin-bottom:8px;font-size:11px;font-weight:700;color:#888;text-transform:uppercase">Religion &amp; Category</div>
+  <div class="g3" style="margin-bottom:10px">
+    <div class="fg"><label>Nationality</label><select id="f_nationality"><option>Indian</option><option>Other</option></select></div>
+    <div class="fg"><label>Religion</label><select id="f_religion"><option>Hindu</option><option>Muslim</option><option>Christian</option><option>Buddhist</option><option>Jain</option><option>Sikh</option><option>Parsi</option><option>Other</option></select></div>
+    <div class="fg"><label>Caste</label><input id="f_caste" placeholder="Caste"></div>
+    <div class="fg"><label>Category</label><select id="f_category"><option>SC</option><option>ST</option><option>OBC</option><option>VJNT</option><option>NT</option><option>General</option><option>SBC</option><option>-</option><option>Other Backword</option></select></div>
+  </div>
+  <div style="margin-bottom:8px;font-size:11px;font-weight:700;color:#888;text-transform:uppercase">Academic Details</div>
+  <div class="g3" style="margin-bottom:10px">
+    <div class="fg"><label>GR Number *</label><input id="f_gr" placeholder="GR001"></div>
+    <div class="fg"><label>PEN Number</label><input id="f_pen" placeholder="PEN Number"></div>
+   <div class="fg">
+  <label>Aadhaar Number</label>
+
+  <input 
+    id="f_aadhaar"
+    maxlength="12"
+    inputmode="numeric"
+    oninput="this.value=this.value.replace(/\D/g,'')"
+    placeholder="12 Digit Aadhaar Number">
+</div>
+    <div class="fg"><label>Current Standard</label><select id="f_std"><option>1st</option><option>2nd</option><option>3rd</option><option>4th</option><option>5th</option><option>6th</option><option>7th</option><option>8th</option><option>9th</option><option>10th (June 2025)</option><option>10th (July 2025)</option><option>10th (Aug 2025)</option><option>11th</option><option>12th</option></select></div>
+    <div class="fg"><label>Division</label><select id="f_div"><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+    <div class="fg"><label>Reason for Leaving</label><select id="f_reason"><option>Passed Out</option><option>Transfer</option><option>Left Studies</option><option>Sent Up For The S.S.C. Exam Held In Feb/March 2026 & Passed</option><option>Due to parent Request</option></select></div>
+    <div class="fg"><label>Admission Date</label><input id="f_admdate" type="date"></div>
+    
+    <div class="fg">
+  <label>Admission Standard</label>
+  <select id="f_admstd">
+    <option>1st</option>
+    <option>2nd</option>
+    <option>3rd</option>
+    <option>4th</option>
+    <option>5th</option>
+    <option>6th</option>
+    <option>7th</option>
+    <option>8th</option>
+    <option>9th</option>
+    <option>10th</option>
+    <option>11th</option>
+    <option>12th</option>
+  </select>
+</div>
+    <div class="fg"><label>Leaving Date</label><input id="f_leavdate" type="date"></div>
+    <div class="fg">
+  <label>Last School Attended</label>
+  <input id="f_lastschool" placeholder="School Name">
+</div>
+
+<div class="fg">
+  <label>Seat Number</label>
+  <input id="f_seatno" placeholder="Board Seat No">
+</div>
+
+<div class="fg">
+  <label>Reason For Leaving (Board Style)</label>
+  <input id="f_reasonremark"
+  placeholder="Sent Up For The S.S.C. Exam Held In Feb/March 2026 & Passed">
+</div>
+
+<div class="fg">
+  <label>Remarks</label>
+  <input id="f_remarks"
+  placeholder="Guardian's Request">
+</div>
+  </div>
+  <input type="hidden" id="edit_id">
+  <div class="btn-row">
+    <button class="btn btn-navy" onclick="saveStudent()">&#10003; Save Student</button>
+    <button class="btn btn-gray" onclick="clearForm()">&#10007; Clear</button>
+  </div>
+</div>
+
+<!-- STUDENT LIST -->
+<div class="section">
+  <div class="sec-title">&#128203; Students</div>
+  <div style="display:flex;gap:8px;margin-bottom:12px">
+    <input id="search" placeholder="Search name or GR number..." oninput="renderList()" style="flex:1;padding:8px 10px;border:1.5px solid #bbb;border-radius:5px;font-size:13px;outline:none">
+    <span id="count-badge" style="align-self:center;font-size:12px;color:#666;white-space:nowrap"></span>
+  </div>
+  <div style="overflow-x:auto">
+    <table class="tbl">
+      <thead>
+<tr>
+<th>#</th>
+<th>GR No</th>
+<th>Name</th>
+<th>Std</th>
+<th>Leaving</th>
+<th>LC</th>
+<th>Actions</th>
+</tr>
+</thead>
+      <tbody id="list-body"></tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- HIDDEN LC PRINT AREA -->
+<div id="lc-area">
+  <div class="lc-page" id="lc-content"></div>
+</div>
+
+<script>
+var SC={sanstha:'Shri Vitthal Shikshan Sanstha',name:'Shri Vitthal Vidyalaya & Jr. College',addr:'Near Bus Stand, Dhule, Maharashtra - 424001',email:'info@vitthalvidyalaya.edu.in',phone:'+91-2562-234567',udise:'27040100102'};
+var students=[];
+var lcN=0;
+
+function load(){
+  try{var a=localStorage.getItem('lcg3_sc');if(a)SC=JSON.parse(a);}catch(e){}
+  try{var b=localStorage.getItem('lcg3_st');if(b)students=JSON.parse(b);}catch(e){}
+  try{var c=localStorage.getItem('lcg3_n');if(c)lcN=parseInt(c);}catch(e){}
+  syncSC();renderList();
+}
+function persist(){
+  localStorage.setItem('lcg3_sc',JSON.stringify(SC));
+  localStorage.setItem('lcg3_st',JSON.stringify(students));
+  localStorage.setItem('lcg3_n',''+lcN);
+}
+function syncSC(){
+  setv('s_sanstha',SC.sanstha);setv('s_school',SC.name);setv('s_addr',SC.addr);setv('s_email',SC.email);setv('s_phone',SC.phone);setv('s_udise',SC.udise);
+}
+function getv(id){var e=document.getElementById(id);return e?e.value.trim():'';}
+function setv(id,v){var e=document.getElementById(id);if(e)e.value=v||'';}
+
+function toggleSettings(){
+  var el=document.getElementById('sec-settings');
+  el.style.display=el.style.display==='none'?'block':'none';
+  if(el.style.display==='block')syncSC();
+}
+function saveSchool(){
+  SC={sanstha:getv('s_sanstha'),name:getv('s_school'),addr:getv('s_addr'),email:getv('s_email'),phone:getv('s_phone'),udise:getv('s_udise')};
+  persist();showMsg('School settings saved!','ok');document.getElementById('sec-settings').style.display='none';
+}
+
+function saveStudent(){
+
+  var name=getv('f_name'),
+      gr=getv('f_gr');
+      var aadhaar=getv('f_aadhaar').replace(/\D/g,'');
+
+if(aadhaar && aadhaar.length!==12){
+
+  showMsg('Aadhaar Number must be 12 digits!','err');
+
+  return;
+}
+
+  if(!name){
+    showMsg('Student name is required!','err');
+    return;
+  }
+
+  if(!gr){
+    showMsg('GR Number is required!','err');
+    return;
+  }
+
+  var eid=getv('edit_id');
+
+  var s={
+
+    id:eid || 'ID'+Date.now(),
+
+    name:getv('f_name'),
+    mother:getv('f_mother'),
+
+    dob:getv('f_dob'),
+    birthplace:getv('f_birthplace'),
+
+    nationality:getv('f_nationality'),
+    religion:getv('f_religion'),
+    caste:getv('f_caste'),
+    category:getv('f_category'),
+    admstd:getv('f_admstd'),
+
+    gr:getv('f_gr'),
+    pen:getv('f_pen'),
+    aadhaar:getv('f_aadhaar'),
+
+    std:getv('f_std'),
+    admstd:getv('f_admstd'),
+    div:getv('f_div'),
+
+    reason:getv('f_reason'),
+
+    admdate:getv('f_admdate'),
+    leavdate:getv('f_leavdate'),
+
+    lastschool:getv('f_lastschool'),
+
+    seatno:getv('f_seatno'),
+
+    reasonremark:getv('f_reasonremark'),
+
+    remarks:getv('f_remarks')
+    
+
+  };
+
+  if(eid){
+
+    var old=students.find(function(x){
+      return x.id===eid;
+    });
+
+    if(old){
+      s.lcIssued=old.lcIssued;
+      s.lcNo=old.lcNo;
+      s.lcDate=old.lcDate;
+    }
+
+    students=students.map(function(x){
+      return x.id===eid ? s : x;
+    });
+
+    showMsg('Student updated!','ok');
+
+  }else{
+
+    students.push(s);
+
+    showMsg('Student added!','ok');
+  }
+
+  persist();
+
+  clearForm();
+
+  renderList();
+}
+function clearForm(){
+[
+  
+'f_name',
+'f_mother',
+'f_dob',
+'f_birthplace',
+'f_caste',
+'f_gr',
+'f_pen',
+'f_aadhaar',
+'f_admdate',
+'f_admstd',
+'f_leavdate',
+'f_lastschool',
+'f_seatno',
+'f_reasonremark',
+'f_remarks',
+'edit_id'
+]
+  ['f_nationality','f_religion','f_category','f_std','f_admstd','f_div','f_reason'].forEach(function(id){var e=document.getElementById(id);if(e)e.selectedIndex=0;});
+  document.getElementById('form-title').textContent='Add Student';
+}
+function editStudent(id){
+  var s=students.find(function(x){return x.id===id;});if(!s)return;
+  setv('edit_id',s.id);setv('f_name',s.name);setv('f_mother',s.mother);setv('f_dob',s.dob);setv('f_birthplace',s.birthplace);setv('f_caste',s.caste);setv('f_gr',s.gr);setv('f_pen',s.pen);setv('f_aadhaar',s.aadhaar);setv('f_admdate',s.admdate);setv('f_leavdate',s.leavdate);
+  setv('f_nationality',s.nationality);setv('f_admstd',s.admstd);setv('f_religion',s.religion);setv('f_category',s.category);setv('f_std',s.std);setv('f_div',s.div);setv('f_reason',s.reason); setv('f_lastschool',s.lastschool);
+
+setv('f_seatno',s.seatno);
+
+setv('f_reasonremark',s.reasonremark);
+
+setv('f_remarks',s.remarks);
+  document.getElementById('form-title').textContent='Edit Student — '+s.name;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function deleteStudent(id){
+  if(!confirm('Delete this student record?'))return;
+  students=students.filter(function(x){return x.id!==id;});
+  persist();renderList();showMsg('Student deleted','ok');
+}
+function renderList(){
+  var q=(getv('search')||'').toLowerCase();
+
+  var list=q
+  ?students.filter(function(s){
+      return s.name.toLowerCase().includes(q) ||
+             s.gr.toLowerCase().includes(q);
+    })
+  :students;
+
+  var tb=document.getElementById('list-body');
+  var cnt=document.getElementById('count-badge');
+
+  if(cnt){
+    cnt.textContent=
+      'Total: '+students.length+
+      ' | LC Issued: '+
+      students.filter(function(x){
+        return x.lcIssued;
+      }).length;
+  }
+
+  if(!list.length){
+    tb.innerHTML=
+    '<tr><td colspan="7" class="empty">No students found</td></tr>';
+    return;
+  }
+
+  tb.innerHTML=list.map(function(s,index){
+
+    return '<tr>'+
+
+      '<td class="row-no">'+(index+1)+'</td>'+
+
+      '<td><strong>'+esc(s.gr)+'</strong></td>'+
+
+      '<td><span class="student-name">'+
+      esc(s.name)+
+      '</span></td>'+
+
+      '<td>'+esc(s.std)+'-'+esc(s.div)+'</td>'+
+
+      '<td>'+
+      (s.leavdate?fmtD(s.leavdate):'—')+
+      '</td>'+
+
+      '<td><span class="badge '+
+      (s.lcIssued?'b-pending':'b-ok')+
+      '">'+
+      (s.lcIssued?'Issued':'Pending')+
+      '</span></td>'+
+
+      '<td>'+
+      '<div class="action-box">'+
+
+      '<button class="action-btn edit-btn" onclick="editStudent(\''+s.id+'\')">✏️</button>'+
+
+      '<button class="action-btn print-btn" onclick="doprint(\''+s.id+'\')">🖨️</button>'+
+
+      '<button class="action-btn delete-btn" onclick="deleteStudent(\''+s.id+'\')">🗑️</button>'+
+
+      '</div>'+
+      '</td>'+
+
+    '</tr>';
+
+  }).join('');
+}
+
+function doprint(id){
+
+  var s=students.find(function(x){
+    return x.id===id;
+  });
+
+  if(!s)return;
+
+  if(!s.lcIssued){
+
+    lcN++;
+
+    s.lcIssued=true;
+s.lcNo='';
+    s.lcNo=pad4(lcN);
+
+    s.lcDate=toDay();
+
+    students=students.map(function(x){
+      return x.id===id ? s : x;
+    });
+
+    persist();
+
+    renderList();
+  }
+
+  buildLC(s);
+
+  setTimeout(function(){
+    window.print();
+  },400);
+}
+
+function pad4(n){
+  return n<10 ? '000'+n :
+         n<100 ? '00'+n :
+         n<1000 ? '0'+n :
+         ''+n;
+}
+function toDay(){return new Date().toISOString().slice(0,10);}
+function fmtD(d){
+  if(!d)return '—';
+
+  var dt=new Date(d);
+
+  var day=String(dt.getDate()).padStart(2,'0');
+  var month=String(dt.getMonth()+1).padStart(2,'0');
+  var year=dt.getFullYear();
+
+  return day+' / '+month+' / '+year;
+}
+function dobWords(d){
+
+  if(!d)return '—';
+
+  var dt=new Date(d);
+
+  var days=[
+    '', 'First','Second','Third','Fourth','Fifth','Sixth','Seventh','Eighth','Ninth',
+    'Tenth','Eleventh','Twelfth','Thirteenth','Fourteenth','Fifteenth',
+    'Sixteenth','Seventeenth','Eighteenth','Nineteenth','Twentieth',
+    'Twenty First','Twenty Second','Twenty Third','Twenty Fourth',
+    'Twenty Fifth','Twenty Sixth','Twenty Seventh','Twenty Eighth',
+    'Twenty Ninth','Thirtieth','Thirty First'
+  ];
+
+  var months=[
+    'January','February','March','April','May','June',
+    'July','August','September','October','November','December'
+  ];
+
+ function yearToWords(y){
+
+  var ones=[
+    'Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine',
+    'Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen',
+    'Sixteen','Seventeen','Eighteen','Nineteen'
+  ];
+
+  var tens=[
+    '','','Twenty','Thirty','Forty','Fifty',
+    'Sixty','Seventy','Eighty','Ninety'
+  ];
+
+  function two(n){
+    if(n<20)return ones[n];
+    return tens[Math.floor(n/10)] + (n%10 ? ' '+ones[n%10] : '');
+  }
+
+  if(y<100)return two(y);
+
+  if(y<1000){
+    return ones[Math.floor(y/100)]+' Hundred '+two(y%100);
+  }
+
+  return two(Math.floor(y/1000))+' Thousand '+two(y%1000);
+}
+  return days[dt.getDate()] + ' ' +
+         months[dt.getMonth()] + ' ' +
+         yearToWords(dt.getFullYear());
+}
+function esc(s){return s?String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'):'—';}
+function aadhaarBoxes(num){
+
+  num=(num||'').replace(/\D/g,'');
+
+  if(!num)return '—';
+
+  return '<div class="aadhaar-box-wrap">'+
+    num.split('').map(function(d,i){
+
+      var gap=(i===3 || i===7)
+        ? 'style="margin-right:8px"'
+        : '';
+
+      return '<span class="aadhaar-box" '+gap+'>'+d+'</span>';
+
+    }).join('')+
+  '</div>';
+}
+function buildLC(s){
+  var r=function(l1,v1,l2,v2){
+    return '<tr><td class="lbl">'+l1+'</td><td class="val">'+v1+'</td><td class="lbl">'+l2+'</td><td class="val">'+v2+'</td></tr>';
+  };
+  var html=
+
+    '<div class="lc-outer">'+
+
+  '<div class="lc-hdr">'+
+
+  '<div class="lc-header-main">'+
+
+    '<div class="lc-logo-box">'+
+  '<img src="logolc.png" class="lc-logo lc-big-logo">'+
+    '</div>'+
+
+    '<div class="lc-header-center">'+
+
+      '<div class="lc-sanstha">► RAZA Foundation Amalner ◄</div>'+
+
+      '<div class="lc-school">Royal Urdu High School Amalner  </div>'+
+
+      '<div class="lc-addr">Amalner Tal Amalner Dist Jalgaon Pincode (425401)</div>'+
+
+  '<div class="lc-topline">'+
+
+ 
+'</div>'+
+
+'<div class="lc-info-row">'+
+
+
+
+  '<div class="lc-info-item">Index No. : S1501077</div>'+
+
+   '<div class="lc-info-item">ORIGINAL</div>'+
+  
+'<div class="lc-info-item lc-udise-right">'+
+  '<span class="udise-label">UDISE No.</span> : '+
+  '<span class="udise-value">27030116209</span>'+
+'</div>'+
+
+
+'</div>'+
+
+  '</div>'+
+
+'</div>'+
+    '<div class="lc-title">'+
+      'SCHOOL LEAVING CERTIFICATE'+
+      '<span class="lc-marathi"></span>'+
+    '</div>'+
+
+    '<div class="lc-meta-row">'+
+      '<span>GR No : <u>'+esc(s.gr || '—')+'</u></span>'+
+      '<span>Sr No. : <u>'+esc(s.lcNo)+'</u></span>'+
+
+    '</div>'+
+
+    '<table class="lc-tbl">'+
+
+r(
+  'PEN Number',
+  '<div class="pen-box-wrap">'+
+    (s.pen || '00000000000')
+    .substring(0,11)
+    .split('')
+    .map(function(ch){
+      return '<span class="pen-box">'+esc(ch)+'</span>';
+    }).join('')+
+  '</div>',
+'Aadhaar Number',
+esc(s.aadhaar || '—')
+)+
+
+'<tr>'+
+  '<td class="lbl">Name of the Pupil in Full</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong style="font-size:11pt;letter-spacing:.5px">'+esc(s.name || '—')+'</strong>'+
+  '</td>'+
+'</tr>'+
+
+'<tr>'+
+  '<td class="lbl">Mother\'s Name</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong>'+esc(s.mother || '—')+'</strong>'+
+  '</td>'+
+'</tr>'+
+
+'<tr>'+
+  '<td class="lbl">Nationality</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong>Indian</strong>'+
+  '</td>'+
+'</tr>'+
+
+'<tr>'+
+  '<td class="lbl">Mother Tongue</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong>Marathi</strong>'+
+  '</td>'+
+'</tr>'+
+
+
+
+'<tr>'+
+  '<td class="lbl">Religion</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong>'+esc(s.religion || '—')+'</strong>'+
+  '</td>'+
+'</tr>'+
+
+'<tr>'+
+  '<td class="lbl">Caste</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong>'+esc(s.caste || '—')+'</strong>'+
+  '</td>'+
+'</tr>'+
+
+'<tr>'+
+  '<td class="lbl">Sub-Caste</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong>'+esc(s.category || '—')+'</strong>'+
+  '</td>'+
+'</tr>'+
+'<tr>'+
+  '<td class="lbl">Place of Birth</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong>'+esc(s.birthplace || '—')+'</strong>'+
+  '</td>'+
+'</tr>'+
+
+'<tr>'+
+  '<td class="lbl">Date of Birth according to Christian Era Dt.</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong>'+fmtD(s.dob)+'</strong>'+
+  '</td>'+
+'</tr>'+
+
+'<tr>'+
+  '<td class="lbl">Date of Birth in Words</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong>'+dobWords(s.dob)+'</strong>'+
+  '</td>'+
+'</tr>'+
+'<tr>'+
+  '<td class="lbl">Last School Attended</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong>'+esc(s.lastschool || '—')+'</strong>'+
+  '</td>'+
+'</tr>'+
+
+'<tr>'+
+  '<td class="lbl">Date of Admission</td>'+
+  '<td class="val">'+
+    '<strong>'+fmtD(s.admdate)+'</strong>'+
+  '</td>'+
+  '<td class="lbl">Admission Std.</td>'+
+  '<td class="val">'+
+    '<strong>'+esc(s.admstd || '—')+'</strong>'+
+  '</td>'+
+'</tr>'+
+
+'<tr>'+
+  '<td class="lbl">Progress in Academic</td>'+
+  '<td class="val">'+
+    '<strong>Good</strong>'+
+  '</td>'+
+  '<td class="lbl">Conduct</td>'+
+  '<td class="val">'+
+    '<strong>Good</strong>'+
+  '</td>'+
+'</tr>'+
+
+'<tr>'+
+  '<td class="lbl">Date of Leaving School</td>'+
+  '<td class="val">'+
+    '<strong>'+fmtD(s.leavdate)+'</strong>'+
+  '</td>'+
+  '<td class="lbl">Studying in Std</td>'+
+  '<td class="val">'+
+    '<strong>'+esc(s.std || '—')+' </strong>'+
+  '</td>'+
+'</tr>'+
+
+'<tr>'+
+  '<td class="lbl">Reason of Leaving</td>'+
+  '<td class="val" colspan="3">'+
+    '<strong>'+esc(s.reasonremark || s.reason || '—')+'</strong>'+
+  '</td>'+
+'</tr>'+
+'</table>'+
+    '<div class="lc-footer">'+
+      '<div class="lc-sigs">'+
+        '<div class="lc-sig-box">'+
+          '<div class="lc-sig-space">Clerk Signature</div>'+
+          '<div class="lc-sig-line"></div>'+
+          '<div class="lc-sig-lbl">Clerk / &#2354;&#2367;&#2346;&#2367;&#2325;</div>'+
+        '</div>'+
+        '<div class="lc-sig-box">'+
+          '<div class="lc-stamp-circle">School<br>Round<br>Stamp</div>'+
+          '<div class="lc-sig-line"></div>'+
+          '<div class="lc-sig-lbl">Official Seal</div>'+
+        '</div>'+
+        '<div class="lc-sig-box">'+
+          '<div class="lc-sig-space">Principal Signature</div>'+
+          '<div class="lc-sig-line"></div>'+
+          '<div class="lc-sig-lbl">Principal / &#2350;&#2369;&#2326;&#2381;&#2351;&#2366;&#2343;&#2381;&#2351;&#2366;&#2346;&#2325;</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="lc-footnote">'+
+  'Place: Amalner Tal Amalner &nbsp;|&nbsp; '+
+  'Date: '+toDay()+
+' &nbsp;|&nbsp; No.change in any entry is to be made except by the authority issuing leaving the certificate and infringement of the rule will be punished with rustication.'+
+'</div>'+
+    '</div>'+
+
+    '</div>';
+
+  document.getElementById('lc-content').innerHTML=html;
+}
+
+function showMsg(txt,type){
+  var el=document.getElementById('msgbox');
+  el.innerHTML='<div class="msg msg-'+(type==='ok'?'ok':'err')+'">'+txt+'</div>';
+  clearTimeout(showMsg._t);showMsg._t=setTimeout(function(){el.innerHTML='';},3000);
+}
+function doBackup(){
+  var d={v:3,sc:SC,students:students,lcN:lcN,date:new Date().toISOString()};
+  var b=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});
+  var u=URL.createObjectURL(b);var a=document.createElement('a');
+  a.href=u;a.download='LC_Backup_'+toDay()+'.json';a.click();URL.revokeObjectURL(u);
+  showMsg('Backup downloaded!','ok');
+}
+function doRestore(e){
+  var f=e.target.files[0];if(!f)return;
+  var r=new FileReader();
+  r.onload=function(ev){
+    try{
+      var d=JSON.parse(ev.target.result);
+      if(!d.students)throw 1;
+      if(!confirm('Restore '+d.students.length+' students? Current data will be overwritten.'))return;
+      SC=d.sc||SC;students=d.students;lcN=d.lcN||0;
+      persist();syncSC();renderList();showMsg('Restored successfully!','ok');
+    }catch(ex){showMsg('Invalid backup file!','err');}
+  };r.readAsText(f);
+}
+
+load();
+</script>
